@@ -90,16 +90,41 @@ values
 ```
 ![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/insert%20into%20jurusan.png)
 ## insert into table STRATA
+```
 insert into STRATA(ID_STRATA, SINGKAT, STRATA)
 values 
 (1, 'D1' , 'Diploma'),
 (2, 'S1' , 'Sarjana'),
 (3, 'S2' , 'Magister');
+```
 ![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/insert%20into%20strata.png)
 ## insert into table PROGRAM_STUDI
+```
 insert into PROGRAM_STUDI(ID_PROGRAM_STUDI, ID_STRATA, ID_JURUSAN, PROGRAM_STUDI)
 values 
 (211, 2, 21, 'Teknik Informatika'),
 (212, 2, 21, 'Teknik Komputer'),
 (219, 3, 21, 'Magister Ilmu Komputer');
+```
 ![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/insert%20into%20program_studi.png)
+## modify table SELEKSI_MASUK
+```
+alter table SELEKSI_MASUK 
+modify SELEKSI_MASUK VARCHAR(100)
+```
+## insert into table SELEKSI_MASUK
+```
+insert into SELEKSI_MASUK(ID_SELEKSI_MASUK, SINGKAT, SELEKSI_MASUK)
+values 
+(1, 'SNMPTN', 'SELEKSI NASIONAL MAHASISWA PERGURUAN TINGGI NEGERI'),
+(2, 'SBMPTN', 'SELEKSI NASIONAL MAHASISWA PERGURUAN TINGGI NEGERI');
+```
+![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/insert%20into%20seleksi_masuk.png)
+## insert into table Mahasiswa
+```
+insert into MAHASISWA(NIM, ID_SELEKSI_MASUK, ID_PROGRAM_STUDI, NAMA, ANGKATAN, TGL_LAHIR, KOTA_LAHIR, JENIS_KELAMIN)
+values
+('155150400', 1, 211, 'JONI', 2015, 1/1/1997, 'MALANG', 'P'),
+('155150401', 2, 212, 'JONO', 2015, 2/10/1997, 'SITUBONDO', 'L');
+```
+![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/insert%20into%20mahasiswa.png)

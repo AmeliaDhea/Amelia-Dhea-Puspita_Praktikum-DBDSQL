@@ -3,4 +3,7 @@
 ```
 create database kampus
 ```
-
+```
+use kampus
+```
+![alt text]()

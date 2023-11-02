@@ -1,6 +1,6 @@
-create database univ
+create database kampus
 
-use univ
+use kampus
 
 create table FAKULTAS (
 ID_FAKULTAS smallint primary key not null,

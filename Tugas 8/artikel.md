@@ -1,4 +1,5 @@
-## Union
+# Union
+## Latihan 1
 ### 1. Lakukan perintah Insert seperti yang ada pada Perintah 6.7 untuk menambahkandata pada table Mahasiswa
 ```
 INSERT INTO univ.MAHASISWA
@@ -66,3 +67,21 @@ ORDER BY NIM;
 ```
 ![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/Tugas%208/Screenshot%20Tugas%208/5%20select.png)
 Penjelasan : Menggabungkan hasil pencarian mahasiswa dari tabel MAHASISWA yang bergabung pada tahun 2015 dengan hasil pencarian mahasiswa dari tabel MAHASISWA_PINDAHAN yang tempat lahirnya tidak dimulai dengan 'M', kemudian hasilnya diurutkan berdasarkan NIM.
+## Latihan 2
+### 1. Tampilkan NIM, Nama dan Angkatan dari Mahasiswa yang memiliki Kota Lahir yang sama dengan Mahasiswa Pindahan dengan nama BUDI
+```
+SELECT M1.NIM, M1.NAMA, M1.ANGKATAN
+FROM univ.MAHASISWA M1, univ.MAHASISWA_PINDAHAN M2
+WHERE M1.KOTA_LAHIR = M2.KOTA_LAHIR
+  AND M2.NAMA = 'BUDI';
+```
+![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/Tugas%208/Screenshot%20Tugas%208/6.%20Latihan%20nomor%201.png)
+Penjelasan : Menampilkan NIM, NAMA, dan ANGKATAN mahasiswa dari tabel MAHASISWA yang memiliki tempat lahir yang sama dengan mahasiswa dari tabel MAHASISWA_PINDAHAN yang memiliki nama 'BUDI'.
+### 2. Tampilkan NIM, Nama dan Angkatan dari Mahasiswa yang memiliki Kota Lahir yang sama dengan seluruh Mahasiswa Pindahan
+```
+SELECT M1.NIM, M1.NAMA, M1.ANGKATAN
+FROM univ.MAHASISWA M1
+WHERE M1.KOTA_LAHIR IN (SELECT DISTINCT KOTA_LAHIR FROM univ.MAHASISWA_PINDAHAN);
+```
+![alt text](https://github.com/AmeliaDhea/Amelia-Dhea-Puspita_Praktikum-DBDSQL/blob/main/Tugas%208/Screenshot%20Tugas%208/7.%20Latihan%20nomor%202.png)
+Penjelasan : Menampilkan NIM, NAMA, dan ANGKATAN mahasiswa dari tabel MAHASISWA yang memiliki tempat lahir yang sama dengan setidaknya satu mahasiswa dari tabel MAHASISWA_PINDAHAN.
